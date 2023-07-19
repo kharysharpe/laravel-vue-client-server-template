@@ -24,6 +24,13 @@ class AddThingAction
         return true;
     }
 
+    public function rules(): array
+    {
+        return [
+            'name' => ['required', 'min:8'],
+        ];
+    }
+
     public function handle(ActionRequest $request)
     {
         return new ThingResource(Thing::create($request->only(['name'])));
