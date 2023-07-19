@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(125);
 
         if ($this->app->runningInConsole()) {
-            Actions::registerCommands();
+            Actions::registerCommands('backend/Commands');
         }
 
         if ($this->app->environment('local')) {
